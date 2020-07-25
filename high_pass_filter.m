@@ -1,0 +1,18 @@
+clc;clear all;close all;
+r =16000;
+c =1e-6;
+f =1:1000;
+vr =(j*2*pi*f*r*c)./(1+j*2*pi*f*r*c);
+amp =abs(vr);
+phase =angle(vr)*180/pi;
+subplot(2,1,1);
+loglog(f,amp,'r-','linewidth',2);
+title('amplitude and phase vs frequency');
+xlabel('frequency (Hz)');
+ylabel('amplitude');
+grid on;
+subplot(2,1,2);
+semilogx(f,phase,'blue-','linewidth',2);
+xlabel('frequency (Hz)');
+ylabel('phase (deg)');
+grid on;
